@@ -1,60 +1,100 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from "tailwindcss"
 
-const config: Config = {
+const config = {
+  darkMode: ["class"],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    "./node_modules/flowbite/**/*.js",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
+  prefix: "",
   theme: {
-    colors: {
-      'blue': {
-        1000: '#091115',
-        500: '#eaeef0',
-        600: '#abbbc3',
-        700: '#587886',
-        800: ' #2e5668',
-        900: '#1c343e',
+    container: {
+      center: true,
+      padding: "2rem",
+      screens: {
+        "2xl": "1400px",
       },
-      'green': {
-        100: '#f4faf9',
-        300: '#d5ebe8',
-        600: '#aad6d1',
-        900: ' #95ccc5',
-      },
-      'red': {
-        100: '#fff3f2',
-        300: '#ffcfcb',
-        600: '#ff9e96',
-        900: '#ff867c',
-      }
     },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        'blue': {
+          1000: "091115",
+          500: "#eaeef0",
+          600: "#abbbc3",
+          700: "#587886",
+          800: "#2e5668",
+          900: "#1c343e",
+        },
+        'green': {
+          100: '#f4faf9',
+          300: '#d5ebe8',
+          600: '#aad6d1',
+          900: '#95ccc5',
+        },
+        'red': {
+          100: '#fff3f2',
+          300: '#ffcfcb',
+          600: '#ff9e96',
+          900: '#ff867c',
+        },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+      },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },
-  plugins: [
-    require('flowbite/plugin')
-  ],
-}
-export default config
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config
 
-// --blue-1000: #091115;
-// --blue-500: #eaeef0;
-// --blue-600: #abbbc3;
-// --blue-700: #587886;
-// --blue-800: #2e5668;
-// --blue-900: #1c343e;
-// --green-100: #f4faf9;
-// --green-300: #d5ebe8;
-// --green-600: #aad6d1;
-// --green-900: #95ccc5;
-// --red-100: #fff3f2;
-// --red-300: #ffcfcb;
-// --red-600: #ff9e96;
-// --red-900: #ff867c;
+export default config
