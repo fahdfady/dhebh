@@ -39,6 +39,7 @@ const config = {
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
+          'blue':"#abbbc340",
         },
         accent: {
           DEFAULT: "hsl(var(--accent))",
@@ -53,7 +54,7 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         'blue': {
-          1000: "091115",
+          1000: "#091115",
           500: "#eaeef0",
           600: "#abbbc3",
           700: "#587886",
@@ -91,6 +92,21 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+
+      
+      fontSize: {
+        'body-1': '2rem',
+        'body-2': '1.75rem',
+        'body-3': '1.5rem',
+        'body-4': '1.25rem',
+        'body-5': '1rem',
+        'body-6': '0.875rem',
+        'header-1': '3rem',
+        'header-2': '2.5rem',
+        'header-3': '2.25rem',
+        'header-4': '2rem',
+        'header-5': '1.75rem',
       },
     },
   },

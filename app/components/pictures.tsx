@@ -1,21 +1,19 @@
-//Error: Functions cannot be passed directly to Client Components unless you explicitly expose it by marking it with "use server".
+import ImgCard from "./ImgCard";
+import { Carousel } from "./ui/carousel";
 
-import Image from "next/image";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/app/components/ui/carousel";
-// import Autoplay from "embla-carousel-autoplay"
-
-
-export default async function Banner() {
+export default function Pictures() {
     return (
-        // removed :max-w-[1592px]    why shouldn't i use it?
-        <section className="pb-32 xl:px-20 xl:pb-0">
-            <div className="relative">
+        <section>
+            <div className="flex justify-center items-center gap-x-11 gap-y-11 px-8 pt-20 sm:px-0">
+                <div className="grid grid-cols-2 gap-6">
+                    <ImgCard />
+                    <ImgCard />
+                    <ImgCard />
+                    <ImgCard />
+                    <ImgCard />
+                    <ImgCard />
+                </div>
+
                 <Carousel
                     opts={{
                         loop: true
@@ -53,9 +51,6 @@ export default async function Banner() {
                     <CarouselPrevious />
                     <CarouselNext />
                 </Carousel>
-            </div>
-            <div className="absolute">
-
             </div>
         </section>
     )
